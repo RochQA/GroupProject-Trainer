@@ -1,5 +1,8 @@
 package com.qa.trainer.entities;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Trainer {
 	
 	private Long id;
