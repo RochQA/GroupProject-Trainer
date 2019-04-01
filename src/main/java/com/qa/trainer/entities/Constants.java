@@ -19,5 +19,6 @@ public class Constants {
 	public static final String TRAINER_EXISTS_MESSAGE = "Trainer already exists";
 	public static final String NAMES_INVALID = "Names Invalid";
 	public static final String GET_TRAINERS_PATH = "getAllTrainers";
+	public static final String GET_TRAINER_PATH = "getTrainer";
 
 }

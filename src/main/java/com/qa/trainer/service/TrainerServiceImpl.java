@@ -8,6 +8,7 @@ import com.qa.trainer.entities.Account;
 import com.qa.trainer.entities.Constants;
 import com.qa.trainer.entities.CreateAccount;
 import com.qa.trainer.entities.Trainer;
+import com.qa.trainer.entities.UpdateAccount;
 
 @Service
 public class TrainerServiceImpl {
@@ -30,6 +31,14 @@ public class TrainerServiceImpl {
 		}else return Constants.VALID_MESSAGE;
 	}
 	
+	public String checkUpdateAccount(UpdateAccount account, Trainer oldTrainer, List<Trainer> accounts) {
+				Trainer matchingAccs = accounts.stream()
+						.filter(acc -> oldTrainer.getId().equals(acc.getId()))
+						.findFirst()
+						.orElse(new Trainer());
+				accounts.remove(matchingAccs);
+				return checkDuplicates(account, accounts);				
+	}
 	public Boolean isFirstNameValid(String firstName) {
 		return  (!firstName.equals(firstName.toLowerCase()) && !firstName.equals(firstName.toUpperCase()) 
 				&& firstName.length() >= 2 && firstName.matches(Constants.PASSCHARS));
