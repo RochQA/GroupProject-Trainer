@@ -35,7 +35,7 @@ public class TrainerController {
 		return srvc.getDisplayName(fullName);
 	}
 	
-	@PutMapping("/checkTrainer")
+	@PutMapping("/checkValid")
 	public String checkTrainer(@RequestBody CreateAccount createAccount) {
 		return srvc.checkTrainer(createAccount, getAllTrainers());
 	}
