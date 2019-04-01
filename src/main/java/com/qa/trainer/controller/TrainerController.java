@@ -23,9 +23,6 @@ public class TrainerController {
 
 	private RestTemplateBuilder rest;
 	private EurekaClient client;
-
-	
-	
 	
 	public TrainerController(TrainerServiceImpl srvc, RestTemplateBuilder rest, EurekaClient client) {
 		this.srvc = srvc;
