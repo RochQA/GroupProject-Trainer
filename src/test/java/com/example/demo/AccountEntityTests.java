@@ -20,14 +20,12 @@ public class AccountEntityTests {
 	
 	@Test
 	public void setUpAccount() {
-		acc.setAccountType("Trainer");
 		acc.setId(5L);
 		acc.setEmail("chris@chris.chris");
 		acc.setPassword("password");
 		acc.setTrainerId(1345L);
 		
 		
-		assertEquals(acc.getAccountType(),"Trainer");
 		assertEquals(acc.getId(),(Long) 5L);
 		assertEquals(acc.getPassword(),"password");
 		assertEquals(acc.getEmail(),"chris@chris.chris");
