@@ -13,14 +13,14 @@ public class Trainer {
 	
 	private String lastName;
 	
-	private String displayName;
+	private String email;
 
 	public String getDisplayName() {
-		return displayName;
+		return email;
 	}
 
 	public void setDisplayName(String displayName) {
-		this.displayName = displayName;
+		this.email = displayName;
 	}
 
 	public Long getId() {

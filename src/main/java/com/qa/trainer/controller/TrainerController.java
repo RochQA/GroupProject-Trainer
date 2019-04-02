@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.netflix.discovery.EurekaClient;
-import com.qa.trainer.entities.Account;
 import com.qa.trainer.entities.Constants;
 import com.qa.trainer.entities.CreateAccount;
 import com.qa.trainer.entities.Trainer;
@@ -30,11 +29,6 @@ public class TrainerController {
 		this.srvc = srvc;
 		this.rest = rest;
 		this.client = client;
-	}
-
-	@PutMapping("/getDisplayName")
-	public String getDisplayName(@RequestBody String fullName) {
-		return srvc.getDisplayName(fullName);
 	}
 	
 	@PutMapping("/checkValid")

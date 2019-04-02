@@ -59,11 +59,6 @@ public class TrainerServiceTests {
 	}
 
 	@Test
-	public void testGetDisplayName() {
-		assertEquals(svc.getDisplayName("John/Brown"), "J Brown");
-	}
-
-	@Test
 	public void testCheckDuplicates() {
 		assertEquals(svc.checkDuplicates(accountC, trainers), Constants.VALID_MESSAGE);
 	}
