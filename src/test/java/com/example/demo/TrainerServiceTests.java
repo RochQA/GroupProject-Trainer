@@ -23,13 +23,14 @@ import com.qa.trainer.service.TrainerServiceImpl;
 @SpringBootTest(classes = TrainerApplication.class)
 public class TrainerServiceTests {
 	
-	Trainer jordan;
-	Trainer chester;
-	List<Trainer> trainers;
-	CreateAccount accountC;
+	private Trainer jordan;
+	private Trainer chester;
+	private List<Trainer> trainers;
+	private CreateAccount accountC;
 	@InjectMocks
-	TrainerServiceImpl svc;
-	UpdateAccount upAccount;
+	private TrainerServiceImpl svc;
+	
+	private UpdateAccount upAccount;
 
 	@Before
 	public void setup() {

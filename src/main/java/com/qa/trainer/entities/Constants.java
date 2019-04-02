@@ -20,5 +20,7 @@ public class Constants {
 	public static final String NAMES_INVALID = "Names Invalid";
 	public static final String GET_TRAINERS_PATH = "getAllTrainers";
 	public static final String GET_TRAINER_PATH = "getTrainer";
+	public static final String CHECK_VALID = "/checkValid";
+	public static final String CHECK_UPDATE_VALID = "/checkUpdateValid";
 
 }

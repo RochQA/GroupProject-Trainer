@@ -14,12 +14,12 @@ public class TrainerServiceImpl implements TrainerService {
 	
 	
 	public String checkDuplicates(CreateAccount accountC, List<Trainer> trainers) {
-		Trainer matchingTrains = new Trainer();
-		matchingTrains = trainers.stream()
+		Trainer matchingTrainer = new Trainer();
+		matchingTrainer = trainers.stream()
 				.filter(trainer -> accountC.getTrainerFirstName().equals(trainer.getFirstName()) && accountC.getTrainerLastName().equals(trainer.getLastName()))
 				.findFirst()
 				.orElse(new Trainer());
-		if (matchingTrains.getFirstName() != null) {
+		if (matchingTrainer.getFirstName() != null) {
 			return Constants.TRAINER_EXISTS_MESSAGE;
 		}else return Constants.VALID_MESSAGE;
 	}

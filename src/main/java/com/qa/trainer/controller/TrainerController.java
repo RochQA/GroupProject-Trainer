@@ -31,11 +31,11 @@ public class TrainerController {
 		this.client = client;
 	}
 	
-	@PutMapping("/checkValid")
+	@PutMapping(Constants.CHECK_VALID)
 	public String checkTrainer(@RequestBody CreateAccount createAccount) {
 		return srvc.checkTrainer(createAccount, getAllTrainers());
 	}
-	@PutMapping("/checkUpdateValid")
+	@PutMapping(Constants.CHECK_UPDATE_VALID)
 	public String checkUpdateValid(@RequestBody UpdateAccount account) {
 		return srvc.checkUpdateAccount(account, getTrainer(account.getTrainerId()), getAllTrainers());	
 	}
