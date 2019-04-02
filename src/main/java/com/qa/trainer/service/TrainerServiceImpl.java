@@ -32,12 +32,14 @@ public class TrainerServiceImpl {
 	}
 	
 	public String checkUpdateAccount(UpdateAccount account, Trainer oldTrainer, List<Trainer> accounts) {
-				Trainer matchingAccs = accounts.stream()
+			if(isFirstNameValid(account.getTrainerFirstName()) && isLastNameValid(account.getTrainerLastName())) {
+				Trainer matchingAcc = accounts.stream()
 						.filter(acc -> oldTrainer.getId().equals(acc.getId()))
 						.findFirst()
 						.orElse(new Trainer());
-				accounts.remove(matchingAccs);
-				return checkDuplicates(account, accounts);				
+				accounts.remove(matchingAcc);
+				return checkDuplicates(account, accounts);	
+			}else return Constants.NAMES_INVALID;
 	}
 	public Boolean isFirstNameValid(String firstName) {
 		return  (!firstName.equals(firstName.toLowerCase()) && !firstName.equals(firstName.toUpperCase()) 
@@ -51,8 +53,8 @@ public class TrainerServiceImpl {
 	public String checkTrainer(CreateAccount createAccount, List<Trainer> trainers) {
 		if(isFirstNameValid(createAccount.getTrainerFirstName()) && isLastNameValid(createAccount.getTrainerLastName())) {
 			return checkDuplicates(createAccount, trainers);
-		}
-		return Constants.NAMES_INVALID;
+		}else return Constants.NAMES_INVALID;
+			
 	}
 
 
