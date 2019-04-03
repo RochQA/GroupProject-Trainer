@@ -6,5 +6,5 @@ COPY . .
 RUN mvn clean package
 
 FROM openjdk:8
-COPY --from=build /build/target/DiscoveryTrainer-0.0.1-SNAPSHOT.jar Trainer.jar
+COPY --from=build /build/target/Trainer-0.0.1-SNAPSHOT.jar Trainer.jar
 ENTRYPOINT ["java","-jar","Trainer.jar"]
